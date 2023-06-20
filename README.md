@@ -17,3 +17,6 @@ python main.py
 
 ## Stop app
 Ctrl + c
+
+## How to create app password?
+https://support.google.com/mail/answer/185833?hl=en
