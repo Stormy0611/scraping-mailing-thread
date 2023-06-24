@@ -8,6 +8,7 @@ import os
 
 # Load variables from .env into the environment
 load_dotenv()
+isStart = 0
 
 history = []
 
@@ -52,8 +53,11 @@ async def scraper():
         for ele in element.select('.card-block > div > div.o'):
             content += ele.text + '\n'
         print(content)
-        send_mail("A new post by hamexrodregan", content)
         history.append(id)
+        if (not isStart):
+            isStart = 1
+        else:
+            send_mail("A new post by hamexrodregan", content)
     else:
         print('not open or already exist')
 
