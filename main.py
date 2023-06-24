@@ -45,7 +45,7 @@ async def scraper():
     soup = BeautifulSoup(html, 'html.parser')
     element = soup.select_one('div[id^="kupong"]:first-child')
     id = element['id'].split('-')[-1]
-    global history
+    global history, isStart
     if 'open' in element['data-betfilter'] and id not in history:
         title = list(element.select_one('.card-header > div > .col-lg-6:first-child').children)[-1].text
         content = "Title: " + title + '\n'
